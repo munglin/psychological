@@ -17,19 +17,45 @@ def main():
     
     # Define the size of student cohorts
     cohort_size = [200, 287, 323, 245, 223, 243]
-    well_being_summary = {'stress': 45, 
-                          'depression': 15, 
-                          'anxiety': 24,
-                          'bullying': 34,
-                          'support': 28}
+    well_being_summary_t1 = {'Stress': 104, 
+                          'Depression': 67, 
+                          'Anxiety': 100,
+                          'Bullying': 87,
+                          'Lacking Peer Support': 90}
+
+    well_being_summary_t1_p1 = {'Stress': 24, 
+                          'Depression': 10, 
+                          'Anxiety': 20,
+                          'bullying': 26,
+                          'Lacking Peer Support': 18}
     
-    cs_sidebar(cohort_size)
-    real_body(well_being_summary,cohort_size)
-    cs_body(well_being_summary)
+    well_being_summary_t2 = {'Stress': 124, 
+                          'Depression': 87, 
+                          'Anxiety': 120,
+                          'Bullying': 107,
+                          'Lacking Peer Support': 110}
+    
+    well_being_summary_t2_p1 = {'Stress': 34, 
+                          'Depression': 34, 
+                          'Anxiety': 20,
+                          'bullying': 26,
+                          'Lacking Peer Support': 18}
 
+    cohort, term = cs_sidebar(cohort_size)
+
+    header()
+    if term == 'Term 1 Start':
+        if cohort == 'School-wide':
+            body(well_being_summary_t1, sum(cohort_size), term)
+        else:
+            body(well_being_summary_t1_p1, cohort_size[1], term)
+    else:
+        if cohort == 'School-wide':
+            body(well_being_summary_t2, sum(cohort_size), term)
+        else:
+            body(well_being_summary_t2_p1, cohort_size[1], term)    
+    
     return None
-
-# Thanks to streamlitopedia for the following code snippet
 
 # Sidebar Functions
 
@@ -40,13 +66,13 @@ def cs_sidebar(cohort_size):
     st.sidebar.markdown('__Cohort Selection__')
 
     cohort = st.sidebar.selectbox('__Cohort (Size)__',
-                                    ['School-wide (' + str(sum(cohort_size)) + ')', 
-                                     'Primary 1 (' + str(cohort_size[0]) + ')',
-                                     'Primary 2 (' + str(cohort_size[1]) + ')',
-                                     'Primary 3 (' + str(cohort_size[2]) + ')',
-                                     'Primary 4 (' + str(cohort_size[3]) + ')',
-                                     'Primary 5 (' + str(cohort_size[4]) + ')',
-                                     'Primary 6 (' + str(cohort_size[5]) + ')',
+                                    ['School-wide', 
+                                     'Primary 1',
+                                     #'Primary 2 (' + str(cohort_size[1]) + ')',
+                                     #'Primary 3 (' + str(cohort_size[2]) + ')',
+                                     #'Primary 4 (' + str(cohort_size[3]) + ')',
+                                     #'Primary 5 (' + str(cohort_size[4]) + ')',
+                                     #'Primary 6 (' + str(cohort_size[5]) + ')',
                                      ])
 
     st.sidebar.markdown('__Term Selection__')
@@ -54,10 +80,11 @@ def cs_sidebar(cohort_size):
     term = st.sidebar.selectbox('__Term__',
                                     ['Term 1 Start', 
                                      'Term 2 End',
-                                     'Term 3 Start',
-                                     'Term 4 End'])
-
-    return None
+                                     #'Term 3 Start',
+                                     #'Term 4 End'
+                                     ])
+    
+    return cohort, term
 
 ##########################
 # Main body of cheat sheet
@@ -67,67 +94,80 @@ def plot(label, num_total, num_condition):
     
     fig, ax1 = plt.subplots()
     sizes = [num_condition, num_total - num_condition]
-    ax1.pie(sizes, explode= [0.2, 0], labels = [label, 'Not ' + label], autopct='%1.1f%%',
+    ax1.pie(sizes, explode= [0.2, 0], labels = ['Signs of ' + label, 'No signs of ' + label], autopct='%1.1f%%',
             shadow=True, startangle=90)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     
     return fig
 
-
-def real_body(well_being_summary, cohort_size):
-    # Title the app
+def header():
     st.title('Student Well-being Dashboard')
     st.subheader('Bishan Primary School')
-    
-    col1, col2 = st.columns([0.4,0.6])
-    
-    col1.subheader('Well-being displays')
+    st.text('Note: Information here is based on sample information and not representative of realistic scenarios.')
+    return None
 
+def body(well_being_summary, cohort_size, term):
+    # Title the app
+
+    st.subheader('Number of students: ' + str(cohort_size))
     
-    cohort_size = cohort_size[0]
+    col1, col2 = st.columns([0.5,0.5])
+    
+    col1.subheader('Sentiment analysis of student mental health responses')
+    col1.text('The machine learning model parses information from')
+    col1.text(' check-in forms, and decides how students are feeling.')
+
+    #cohort_size = cohort_size[0]
     
     
     for condition, num_condition in well_being_summary.items():
         fig1 = plot(condition, cohort_size, num_condition)
         col1.pyplot(fig1)
     
-    col1.code('''
-st.text('Fixed width text')
-st.markdown('_Markdown_') # see #*
-st.caption('Balloons. Hundreds of them...')
-st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
-st.write('Most objects') # df, err, func, keras!
-st.write(['st', 'is <', 3]) # see *
-st.title('My title')
-st.header('My header')
-st.subheader('My sub')
-st.code('for i in range(8): foo()')
+    col2.subheader('Analytics of Check-in Forms')
+    col2.text('Displays analytics of student responses from forms.')
 
-# * optional kwarg unsafe_allow_html = True
-
-    ''')
+    if term == 'Term 1 Start':
+        col2.text('How do you feel about the new school year?')
+        chart_data = pd.DataFrame({'Bored': 56, 'Sad': 50, 'Excited': 40}, index = ['Students']).T
+        col2.bar_chart(chart_data, horizontal = True)
+        
+        col2.text('What are you worried about?')
+        chart_data_2 = pd.DataFrame({'Difficulty making friends': 56, 
+                                   'Sad': 50}, index = ['Students']).T
+        col2.bar_chart(chart_data_2, horizontal = True)
     
-    col2.subheader('Display interactive widgets')
-    col2.code('''
-st.button('Hit me')
-st.data_editor('Edit data', data)
-st.checkbox('Check me out')
-st.radio('Pick one:', ['nose','ear'])
-st.selectbox('Select', [1,2,3])
-st.multiselect('Multiselect', [1,2,3])
-st.slider('Slide me', min_value=0, max_value=10)
-st.select_slider('Slide to select', options=[1,'2'])
-st.text_input('Enter some text')
-st.number_input('Enter a number')
-st.text_area('Area for textual entry')
-st.date_input('Date input')
-st.time_input('Time entry')
-st.file_uploader('File uploader')
-st.download_button('On the dl', data)
-st.camera_input("一二三,茄子!")
-st.color_picker('Pick a color')
-    ''')
+    else:
+        col2.subheader('How do you feel about this previous term?')
+        chart_data = pd.DataFrame({'Difficult': 104, 'Not enough friends': 100}, index = ['Students']).T
+        col2.bar_chart(chart_data, horizontal = True)    
+    
+    return None
 
+def body_t2(well_being_summary, cohort_size):
+    # Title the app
+    
+    col1, col2 = st.columns([0.4,0.6])
+    
+    col1.subheader('Analysis of student well-being')
+    col1.text('Analysis for each category is conducted')
+
+    #cohort_size = cohort_size[0]
+    
+    
+    for condition, num_condition in well_being_summary.items():
+        fig1 = plot(condition, cohort_size, num_condition)
+        col1.pyplot(fig1)
+    
+    col2.subheader('Student Responses')
+    col2.text('How do you feel about the new school year?')
+    chart_data = pd.DataFrame({'Bored': 56, 'Sad': 50, 'Excited': 40}, index = ['Students']).T
+    col2.bar_chart(chart_data, horizontal = True)
+    
+    col2.text('What are you worried about?')
+    chart_data_2 = pd.DataFrame({'Difficulty making friends': 56, 
+                               'Sad': 50}, index = ['Students']).T
+    col2.bar_chart(chart_data_2, horizontal = True)
     
     return None
 
@@ -162,26 +202,6 @@ st.code('for i in range(8): foo()')
 
     ''')
 
-    # Display data
-
-    col1.subheader('Display data')
-    col1.code('''
-st.dataframe(my_dataframe)
-st.table(data.iloc[0:10])
-st.json({'foo':'bar','fu':'ba'})
-st.metric(label="Temp", value="273 K", delta="1.2 K")
-    ''')
-
-
-    # Display media
-
-    col1.subheader('Display media')
-    col1.code('''
-st.image('./header.png')
-st.audio(data)
-st.video(data)
-    ''')
-
     # Columns
 
     col1.subheader('Columns')
@@ -199,37 +219,6 @@ col1, col2, col3 = st.columns([3,1,1])
 >>>     st.write('This is column 1')
               
 ''')
-
-    # Tabs
-    
-    col1.subheader('Tabs')
-    col1.code('''
-# Insert containers separated into tabs:
->>> tab1, tab2 = st.tabs(["Tab 1", "Tab2"])
->>> tab1.write("this is tab 1")
->>> tab2.write("this is tab 2")
-
-# You can also use "with" notation:
->>> with tab1:
->>>   st.radio('Select one:', [1, 2])
-''')
-
-    # Control flow
-
-    col1.subheader('Control flow')
-    col1.code('''
-# Stop execution immediately:
-st.stop()
-# Rerun script immediately:
-st.experimental_rerun()
-
-# Group multiple widgets:
->>> with st.form(key='my_form'):
->>>   username = st.text_input('Username')
->>>   password = st.text_input('Password')
->>>   st.form_submit_button('Login')
-''')
-    
     # Personalize apps for users
 
     col1.subheader('Personalize apps for users')
@@ -271,56 +260,11 @@ st.camera_input("一二三,茄子!")
 st.color_picker('Pick a color')
     ''')
 
-    col2.code('''
-# Use widgets\' returned values in variables
->>> for i in range(int(st.number_input('Num:'))): foo()
->>> if st.sidebar.selectbox('I:',['f']) == 'f': b()
->>> my_slider_val = st.slider('Quinn Mallory', 1, 88)
->>> st.write(slider_val)
-    ''')
+    
     col2.code('''
 # Disable widgets to remove interactivity:
 >>> st.slider('Pick a number', 0, 100, disabled=True)
               ''')
-
-    # Build chat-based apps
-
-    col2.subheader('Build chat-based apps')
-    col2.code('''
-# Insert a chat message container.
->>> with st.chat_message("user"):
->>>    st.write("Hello 👋")
->>>    st.line_chart(np.random.randn(30, 3))
-
-# Display a chat input widget.
->>> st.chat_input("Say something")          
-''')
-
-    col2.markdown('<small>Learn how to [build chat-based apps](https://docs.streamlit.io/knowledge-base/tutorials/build-conversational-apps)</small>', unsafe_allow_html=True)
-
-    # Mutate data
-
-    col2.subheader('Mutate data')
-    col2.code('''
-# Add rows to a dataframe after
-# showing it.
->>> element = st.dataframe(df1)
->>> element.add_rows(df2)
-
-# Add rows to a chart after
-# showing it.
->>> element = st.line_chart(df1)
->>> element.add_rows(df2)
-''')
-
-    # Display code
-
-    col2.subheader('Display code')
-    col2.code('''
-st.echo()
->>> with st.echo():
->>>     st.write('Code will be executed and printed')
-    ''')
 
     # Placeholders, help, and options
 
