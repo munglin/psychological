@@ -84,7 +84,7 @@
           <mxGeometry x="435" y="40" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-24" value="&lt;div&gt;122k records (1.5%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;5k unique (3.1%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="515" y="180" width="120" height="30" as="geometry" />
+          <mxGeometry x="495" y="160" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-25" value="&lt;div&gt;613k records (7.4%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;6.9k records (4.3%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="580" y="370" width="120" height="30" as="geometry" />
@@ -123,7 +123,7 @@
           <mxGeometry x="680" y="30" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="5XDLLNpMgbm_Sm2Lj41F-6" value="&lt;font color=&quot;#6666ff&quot;&gt;11795 unique MOELib UUIDs map to Lesson Source UUIDs (87.9%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="650" y="315" width="170" height="30" as="geometry" />
+          <mxGeometry x="700" y="230" width="120" height="5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
