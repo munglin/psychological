@@ -30,6 +30,14 @@
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-11" value="Assignment&lt;div&gt;&lt;div&gt;- UUID&lt;/div&gt;&lt;/div&gt;&lt;div&gt;- Original UUID&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="565" y="40" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="5XDLLNpMgbm_Sm2Lj41F-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pp7dFvi1Cq4HVV2FVrHm-12" target="pp7dFvi1Cq4HVV2FVrHm-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="260" />
+              <mxPoint x="720" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-12" value="Lesson&lt;div&gt;- UUID&lt;/div&gt;&lt;div&gt;- Original UUID&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="565" y="230" width="120" height="60" as="geometry" />
         </mxCell>
@@ -112,7 +120,10 @@
           <mxGeometry x="495" y="480" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="5XDLLNpMgbm_Sm2Lj41F-3" value="&lt;font color=&quot;#6666ff&quot;&gt;8974 unique MOELib UUIDs map to Assignment Source UUIDs (67%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="680" y="20" width="170" height="30" as="geometry" />
+          <mxGeometry x="680" y="30" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5XDLLNpMgbm_Sm2Lj41F-6" value="&lt;font color=&quot;#6666ff&quot;&gt;11795 unique MOELib UUIDs map to Lesson Source UUIDs (87.9%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="315" width="170" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
