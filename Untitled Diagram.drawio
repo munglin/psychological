@@ -83,7 +83,7 @@
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-23" value="&lt;div&gt;7.5m records (90.8%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;146k unique (91.2%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="435" y="40" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="pp7dFvi1Cq4HVV2FVrHm-24" value="&lt;div&gt;122k records (1.5%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;5k unique (3.1%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="pp7dFvi1Cq4HVV2FVrHm-24" value="&lt;div&gt;122k records (1.5%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;5k unique (3.1%)&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#6666ff&quot;&gt;&lt;span style=&quot;caret-color: rgb(102, 102, 255);&quot;&gt;3.9k unique UUIDs are coded as &#39;als-session&#39;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="495" y="160" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-25" value="&lt;div&gt;&lt;font color=&quot;#ff3333&quot;&gt;* URL UUIDs are coded as self-study&quot;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;613k records (7.4%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;6.9k records (4.3%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
