@@ -86,8 +86,8 @@
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-24" value="&lt;div&gt;122k records (1.5%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;5k unique (3.1%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="495" y="160" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="pp7dFvi1Cq4HVV2FVrHm-25" value="&lt;div&gt;613k records (7.4%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;6.9k records (4.3%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="580" y="370" width="120" height="30" as="geometry" />
+        <mxCell id="pp7dFvi1Cq4HVV2FVrHm-25" value="&lt;div&gt;&lt;font color=&quot;#ff3333&quot;&gt;* URL UUIDs are coded as self-study&quot;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;613k records (7.4%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;6.9k records (4.3%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="580" y="340" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-26" value="&lt;div&gt;26k records (0.3%)&lt;/div&gt;&lt;font color=&quot;#6666ff&quot;&gt;2.5k unique&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(102, 102, 255);&quot;&gt;(1.6%)&lt;/span&gt;&lt;div&gt;&lt;font color=&quot;#ff3333&quot;&gt;- 2.1k unique assignment UUIDs&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(102, 102, 255);&quot;&gt;-&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="160" y="245" width="180" height="30" as="geometry" />
