@@ -114,7 +114,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-32" value="&lt;font color=&quot;#6666ff&quot;&gt;92 unique (0.5%)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="260" y="440" width="110" height="30" as="geometry" />
+          <mxGeometry x="250" y="450" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="pp7dFvi1Cq4HVV2FVrHm-34" value="No match" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="495" y="480" width="120" height="30" as="geometry" />
